@@ -151,7 +151,7 @@ func (ms *mutationStats) Score() float64 {
 		return 0.0
 	}
 
-	return float64(ms.passed) / float64(total)
+	return float64(total - ms.failed) / float64(total)
 }
 
 func (ms *mutationStats) Total() int {
